@@ -14,5 +14,8 @@ target 'ChatChat' do
   pod 'FirebaseDatabase'
   pod 'GoogleSignIn'
   pod 'Google'
+  pod 'DropDown'
+
+
 
 end

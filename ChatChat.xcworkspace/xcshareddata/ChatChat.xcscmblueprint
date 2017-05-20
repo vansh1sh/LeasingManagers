@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0A76B529B5A8C829183F42F81C672221C08428EF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BA560EF191457109FB5651D827A98EEC6D0F81EE" : 9223372036854775807,
+    "0A76B529B5A8C829183F42F81C672221C08428EF" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0E4973FE-20F4-4395-996D-7BF03F31DC19",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BA560EF191457109FB5651D827A98EEC6D0F81EE" : "Autocomplete\/",
+    "0A76B529B5A8C829183F42F81C672221C08428EF" : "ChatChatFirebaseTutorial-finished\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ChatChat",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ChatChat.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vansh1sh\/LeasingManagers.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0A76B529B5A8C829183F42F81C672221C08428EF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cjcoax\/Autocomplete.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BA560EF191457109FB5651D827A98EEC6D0F81EE"
+    }
+  ]
+}

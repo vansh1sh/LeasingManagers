@@ -73,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
                 {
                     self.databaseRef.child("user_profiles").child(user!.uid).child("name").setValue(user?.displayName)
                     self.databaseRef.child("user_profiles").child(user!.uid).child("email").setValue(user?.email)
+
                 }
                 
                 let mainStoryboard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
