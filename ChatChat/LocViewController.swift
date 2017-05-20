@@ -50,7 +50,7 @@ extension LocViewController: AutocompleteDelegate {
         let countriesAndFlags: [AutocompletableOption] = filteredCountries.map { ( country) -> AutocompleteCellData in
             var country = country
             country.replaceSubrange(country.startIndex...country.startIndex, with: String(country.characters[country.startIndex]).capitalized)
-            return AutocompleteCellData(text: country, image: UIImage(named: country))
+            return AutocompleteCellData(text: country, image: UIImage(named: "USA"))
             }.map( { $0 as AutocompletableOption })
         
         return countriesAndFlags
@@ -63,5 +63,7 @@ extension LocViewController: AutocompleteDelegate {
     
     func didSelectItem(_ item: AutocompletableOption) {
         self.lblSelectedCountryName.text = item.text
+        UserDefaults.standard.setValue(lblSelectedCountryName.text, forKey: "user_location")
+
     }
 }

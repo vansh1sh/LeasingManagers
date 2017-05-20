@@ -73,11 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
                 {
                     self.databaseRef.child("user_profiles").child(user!.uid).child("name").setValue(user?.displayName)
                     self.databaseRef.child("user_profiles").child(user!.uid).child("email").setValue(user?.email)
+                    UserDefaults.standard.setValue(user?.displayName, forKey: "user_name")
 
                 }
                 
                 let mainStoryboard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
-                
+                UserDefaults.standard.setValue(user?.displayName, forKey: "user_name")
+
                 self.window?.rootViewController?.performSegue(withIdentifier: "HomeViewSegue", sender: nil)
                 
             })

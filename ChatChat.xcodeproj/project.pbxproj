@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		183F58461ECF43E7009C0594 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F58451ECF43E7009C0594 /* ViewController.swift */; };
-		1895F2221ED04AFB0023D1B1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895F2211ED04AFB0023D1B1 /* LocationViewController.swift */; };
 		1895F2241ED04F930023D1B1 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895F2231ED04F930023D1B1 /* MyCell.swift */; };
 		1895F2261ED0AD0E0023D1B1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1895F2251ED0AD0E0023D1B1 /* CustomCell.xib */; };
 		1895F2281ED0ADFA0023D1B1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895F2271ED0ADFA0023D1B1 /* CustomCell.swift */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		183F58451ECF43E7009C0594 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1895F2211ED04AFB0023D1B1 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		1895F2231ED04F930023D1B1 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		1895F2251ED0AD0E0023D1B1 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		1895F2271ED0ADFA0023D1B1 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				183F58451ECF43E7009C0594 /* ViewController.swift */,
 				1895F2291ED0AE8C0023D1B1 /* LocViewController.swift */,
 				1895F2231ED04F930023D1B1 /* MyCell.swift */,
-				1895F2211ED04AFB0023D1B1 /* LocationViewController.swift */,
 				45A0D8F91D49419500F26729 /* ChannelListViewController.swift */,
 				FBEE53031D7B26450004CC1B /* ChatViewController.swift */,
 			);
@@ -358,7 +355,6 @@
 				1895F2441ED0B4BE0023D1B1 /* TableViewDatasource.swift in Sources */,
 				BB53557A1BEF765800321277 /* AppDelegate.swift in Sources */,
 				1895F2421ED0B4BE0023D1B1 /* AutoCompleteViewController.swift in Sources */,
-				1895F2221ED04AFB0023D1B1 /* LocationViewController.swift in Sources */,
 				183F58461ECF43E7009C0594 /* ViewController.swift in Sources */,
 				45A0D8FE1D49508800F26729 /* CreateChannelCell.swift in Sources */,
 				1895F2411ED0B4BE0023D1B1 /* AutocompleteDelegate.swift in Sources */,

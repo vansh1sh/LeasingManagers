@@ -31,7 +31,10 @@ enum Section: Int {
 class ChannelListViewController: UITableViewController {
 
   // MARK: Properties
-  var senderDisplayName: String?
+    
+  var senderDisplayName: String? = UserDefaults.standard.value(forKey: "user_name") as? String
+    var userlocation: String? = UserDefaults.standard.value(forKey: "user_location") as? String
+
   var newChannelTextField: UITextField?
     var checkUser="Vansh"
     let a = 2
@@ -48,7 +51,17 @@ class ChannelListViewController: UITableViewController {
     super.viewDidLoad()
     title = "Welcome"
     
-    if a==2{
+    if userlocation=="449 Palo Verde Road, Gainesville, FL"{
+        channelRef = FIRDatabase.database().reference().child("channels1")
+    }
+    if userlocation=="6731 Thompson Street, Gainesville, FL"{
+        channelRef = FIRDatabase.database().reference().child("channels2")
+    }
+    if userlocation=="8771 Thomas Boulevard, Orlando, FL"{
+        channelRef = FIRDatabase.database().reference().child("channels3")
+    }
+    if userlocation=="1234 Verano Place, Orlando, FL"{
+        channelRef = FIRDatabase.database().reference().child("channels4")
     }
     observeChannels()
   }
