@@ -15,6 +15,8 @@ target 'ChatChat' do
   pod 'GoogleSignIn'
   pod 'Google'
   pod 'DropDown'
+  pod 'NVActivityIndicatorView'
+
 
 
 

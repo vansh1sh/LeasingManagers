@@ -4,11 +4,15 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2D915C11CFDA9CB90DE84D8A075D09300E1F18C9" : 9223372036854775807,
+    "5405F02136B305FD832472AB24DFFA98979259DF" : 9223372036854775807,
     "BA560EF191457109FB5651D827A98EEC6D0F81EE" : 9223372036854775807,
     "0A76B529B5A8C829183F42F81C672221C08428EF" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0E4973FE-20F4-4395-996D-7BF03F31DC19",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2D915C11CFDA9CB90DE84D8A075D09300E1F18C9" : "spotify-like-video-welcome-screen\/",
+    "5405F02136B305FD832472AB24DFFA98979259DF" : "fuse-example-video-login-screen\/",
     "BA560EF191457109FB5651D827A98EEC6D0F81EE" : "Autocomplete\/",
     "0A76B529B5A8C829183F42F81C672221C08428EF" : "ChatChatFirebaseTutorial-finished\/"
   },
@@ -20,6 +24,16 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vansh1sh\/LeasingManagers.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0A76B529B5A8C829183F42F81C672221C08428EF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kaushikdas0\/spotify-like-video-welcome-screen.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2D915C11CFDA9CB90DE84D8A075D09300E1F18C9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yupferris\/fuse-example-video-login-screen.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5405F02136B305FD832472AB24DFFA98979259DF"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cjcoax\/Autocomplete.git",

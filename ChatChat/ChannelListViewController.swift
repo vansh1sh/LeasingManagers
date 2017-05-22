@@ -22,19 +22,29 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
+
 
 enum Section: Int {
   case createNewChannelSection = 0
   case currentChannelsSection
 }
 
-class ChannelListViewController: UITableViewController {
+class ChannelListViewController: UITableViewController , GIDSignInUIDelegate{
+
 
   // MARK: Properties
     
+    
+    @IBOutlet weak var lgo: UIBarButtonItem!
   var senderDisplayName: String? = UserDefaults.standard.value(forKey: "user_name") as? String
     var userlocation: String? = UserDefaults.standard.value(forKey: "user_location") as? String
 
+    @IBAction func lgoo(_ sender: Any) {
+        GIDSignIn.sharedInstance().signOut()
+    }
+
+    
   var newChannelTextField: UITextField?
     var checkUser="Vansh"
     let a = 2

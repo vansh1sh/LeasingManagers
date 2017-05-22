@@ -22,6 +22,8 @@
 
 import UIKit
 import Firebase
+import NVActivityIndicatorView
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
@@ -36,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
 
         return true
     }
@@ -48,6 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        
+        
         
         if let error = error {
             print(error.localizedDescription)
@@ -81,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
                 UserDefaults.standard.setValue(user?.displayName, forKey: "user_name")
 
                 self.window?.rootViewController?.performSegue(withIdentifier: "HomeViewSegue", sender: nil)
+                
                 
             })
             
