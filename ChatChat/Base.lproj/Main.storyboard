@@ -23,7 +23,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LeasingManagers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -99,32 +99,35 @@
         <!--Channel List View Controller-->
         <scene sceneID="bg1-OT-nd2">
             <objects>
-                <tableViewController id="x2j-kb-5mV" customClass="ChannelListViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChatViewController" id="x2j-kb-5mV" customClass="ChannelListViewController" customModule="LeasingManagers" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JJM-X8-sVb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="cRS-Ja-ufu" customClass="CreateChannelCell" customModule="ChatChat" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="cRS-Ja-ufu" customClass="CreateChannelCell" customModule="LeasingManagers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRS-Ja-ufu" id="zqp-en-ts1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a New Channel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3q-Bh-nA7">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a New Discussion Thread" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3q-Bh-nA7">
                                             <rect key="frame" x="16" y="7" width="297" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4se-cC-KMb">
                                             <rect key="frame" x="321" y="7" width="46" height="30"/>
-                                            <state key="normal" title="Create"/>
+                                            <state key="normal" title="Create">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
                                             <connections>
                                                 <action selector="createChannel:" destination="x2j-kb-5mV" eventType="touchUpInside" id="by0-vG-1aY"/>
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.19215686274509802" green="0.25490196078431371" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="g3q-Bh-nA7" firstAttribute="centerY" secondItem="zqp-en-ts1" secondAttribute="centerY" id="WeS-Sq-kPS"/>
                                         <constraint firstItem="4se-cC-KMb" firstAttribute="leading" secondItem="g3q-Bh-nA7" secondAttribute="trailing" constant="8" id="cPg-Pn-AqQ"/>
@@ -172,15 +175,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="udA-kz-mJV">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="u1V-wo-qee">
+                            <color key="tintColor" red="0.0026559780819999999" green="0.58648008110000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="lgoo:" destination="x2j-kb-5mV" id="dhh-Hg-viB"/>
-                                <segue destination="nDi-tb-lMH" kind="presentation" id="qpU-id-Hm3"/>
+                                <action selector="logout:" destination="x2j-kb-5mV" id="a0C-2Y-ICe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="lgo" destination="u1V-wo-qee" id="LIr-kH-cMc"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHe-Sh-dDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +189,7 @@
         <!--Chat View Controller-->
         <scene sceneID="fNE-JP-QV9">
             <objects>
-                <viewController id="IHh-zK-Dgq" customClass="ChatViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IHh-zK-Dgq" customClass="ChatViewController" customModule="LeasingManagers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gTb-3o-Wit"/>
                         <viewControllerLayoutGuide type="bottom" id="fAp-tJ-32e"/>
@@ -210,7 +210,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8CN-Ua-xvG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bLZ-qs-Dqh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bLZ-qs-Dqh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -231,7 +231,7 @@
         <!--Loc View Controller-->
         <scene sceneID="M9m-WH-a5t">
             <objects>
-                <viewController id="qta-oS-Tbw" customClass="LocViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qta-oS-Tbw" customClass="LocViewController" customModule="LeasingManagers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eF3-t3-XA5"/>
                         <viewControllerLayoutGuide type="bottom" id="OlD-wR-QF7"/>
@@ -240,18 +240,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select a country" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e3V-Dj-MMA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Select a location" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e3V-Dj-MMA">
                                 <rect key="frame" x="16" y="35" width="343" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="w36-fy-7h6"/>
                                 </constraints>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yW-JY-xzv">
-                                <rect key="frame" x="187.5" y="333.5" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yW-JY-xzv">
+                                <rect key="frame" x="122" y="323.5" width="131.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -260,15 +260,16 @@
                                 <rect key="frame" x="16" y="75" width="343" height="533.5"/>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXJ-4F-Ijf">
-                                <rect key="frame" x="150" y="616.5" width="74" height="30"/>
+                                <rect key="frame" x="150" y="616.5" width="74" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="1BA-g1-ohE"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8CN-Ua-xvG" kind="presentation" id="psh-xB-lyo"/>
+                                    <action selector="crea:" destination="qta-oS-Tbw" eventType="touchUpInside" id="wAa-P4-MQz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -290,7 +291,9 @@
                     <connections>
                         <outlet property="autocompleteContainerView" destination="gth-Zb-3Z5" id="y1Q-l1-qx8"/>
                         <outlet property="countriesTextField" destination="e3V-Dj-MMA" id="8Zi-iL-LUF"/>
+                        <outlet property="crea" destination="EXJ-4F-Ijf" id="bGY-wc-2Sk"/>
                         <outlet property="lblSelectedCountryName" destination="9yW-JY-xzv" id="Smw-3i-tWf"/>
+                        <segue destination="8CN-Ua-xvG" kind="presentation" identifier="chatView" id="Iy2-94-Hog"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSv-CO-pUh" sceneMemberID="firstResponder"/>
@@ -300,7 +303,7 @@
         <!--View Controller-->
         <scene sceneID="MTK-Wx-z87">
             <objects>
-                <viewController storyboardIdentifier="X10X10" id="nDi-tb-lMH" customClass="ViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="X10X10" id="nDi-tb-lMH" customClass="ViewController" customModule="LeasingManagers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dxt-Jy-1Bq"/>
                         <viewControllerLayoutGuide type="bottom" id="lzj-Lf-YS6"/>
@@ -396,16 +399,17 @@
                         <outlet property="textContent" destination="o8F-x6-Sid" id="jzZ-Ap-4Va"/>
                         <outlet property="textHeading" destination="Y9p-Bh-3P5" id="iur-T2-vtA"/>
                         <segue destination="qta-oS-Tbw" kind="presentation" identifier="HomeViewSegue" id="p77-w4-dg2"/>
+                        <segue destination="8CN-Ua-xvG" kind="presentation" identifier="direct" id="6TT-w8-guS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1u-Ft-QRu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="-358.4707646176912"/>
+            <point key="canvasLocation" x="201" y="-324"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="KXB-WU-ATe">
             <objects>
-                <viewController id="WQH-wm-esU" customClass="ProfileViewController" customModule="ChatChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WQH-wm-esU" customClass="ProfileViewController" customModule="LeasingManagers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mmQ-oN-jrx"/>
                         <viewControllerLayoutGuide type="bottom" id="oox-Lo-wDg"/>
@@ -432,7 +436,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="la5-WF-sWC">
-                                        <rect key="frame" x="12" y="315.5" width="363" height="36.5"/>
+                                        <rect key="frame" x="12" y="315.5" width="363" height="37"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Thin" family="SF UI Display" pointSize="31"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.80111663509999997" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -444,7 +448,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygb-my-jyU">
-                                        <rect key="frame" x="12" y="386" width="363" height="37"/>
+                                        <rect key="frame" x="12" y="386.5" width="363" height="37"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Thin" family="SF UI Display" pointSize="31"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.80111663509999997" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -500,6 +504,6 @@
         <image name="sample-logo-black12.png" width="531" height="102"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C1q-pb-YWz"/>
+        <segue reference="Iy2-94-Hog"/>
     </inferredMetricsTieBreakers>
 </document>

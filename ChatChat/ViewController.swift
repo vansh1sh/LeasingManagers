@@ -9,14 +9,15 @@
 import UIKit
 import GoogleSignIn
 import MediaPlayer
-import NVActivityIndicatorView
+import Firebase
 
 
 
-class ViewController: UIViewController,GIDSignInUIDelegate,NVActivityIndicatorViewable {
+class ViewController: UIViewController,GIDSignInUIDelegate {
     
     @IBOutlet var backgroundView: UIView!
     
+ 
     var images: [UIImage] = []
     
     var image1 = UIImage(named: "firstMessage.png")
@@ -42,9 +43,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,NVActivityIndicatorVi
         
     
         GIDSignIn.sharedInstance().uiDelegate = self
-        
 
-        
         let filePath = Bundle.main.path(forResource: "black", ofType: "mp4")
         self.moviePlayerController.contentURL = URL(fileURLWithPath: filePath!)
         self.moviePlayerController.prepareToPlay()
@@ -62,8 +61,42 @@ class ViewController: UIViewController,GIDSignInUIDelegate,NVActivityIndicatorVi
         rightswap.direction = .right
         view.addGestureRecognizer(leftswap)
         view.addGestureRecognizer(rightswap)
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)  ///< Don't for get this BTW!
+        
+    
+            self.moviePlayerController.stop()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.moviePlayerController.prepareToPlay()
+        print("how many times viewcontroller")
+        
+        
+                // Check if they're already signed in
+             //   GIDSignIn.sharedInstance().signInSilently()
+        
+                // check if the user is signed in
+                if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
+                 print("Signed in")
+                    print("Signed in")
+                    self.performSegue(withIdentifier: "direct", sender: nil)
+
+                
+                } else {
+                    print ("not signed in")
+                    // Need to handle the forwarding once they sign in.
+                }
+        
+      //  self.performSegue(withIdentifier: "direct", sender: nil)
+
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,19 +115,19 @@ class ViewController: UIViewController,GIDSignInUIDelegate,NVActivityIndicatorVi
     }
     */
     
-    func buttonTapped(_ sender: UIButton) {
-        let size = CGSize(width: 30, height: 30)
-        
-        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: sender.tag)!)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
-            NVActivityIndicatorPresenter.sharedInstance.setMessage("Authenticating...")
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            self.stopAnimating()
-        }
-    }
+//    func buttonTapped(_ sender: UIButton) {
+//        let size = CGSize(width: 30, height: 30)
+//        
+//        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: sender.tag)!)
+//        
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+//            NVActivityIndicatorPresenter.sharedInstance.setMessage("Authenticating...")
+//        }
+//        
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+//            self.stopAnimating()
+//        }
+//    }
 
     
     func handleSwap(_ sender:UISwipeGestureRecognizer){

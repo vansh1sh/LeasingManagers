@@ -22,15 +22,13 @@
 
 import UIKit
 import Firebase
-import NVActivityIndicatorView
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     
     var window: UIWindow?
     var databaseRef: FIRDatabaseReference!
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Use Firebase library to configure APIs
@@ -51,44 +49,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+     print("how many times delegate")
         
+//        self.window?.rootViewController?.view.backgroundColor = UIColor(red: CGFloat(237 / 255.0), green: CGFloat(85 / 255.0), blue: CGFloat(101 / 255.0), alpha: 1)
+//        
+//        let cols = 1
+//        let rows = 1
+//        let cellWidth = Int((self.window?.rootViewController?.view.frame.width)! / CGFloat(cols))
+//        let cellHeight = Int((self.window?.rootViewController?.view.frame.height)! / CGFloat(rows))
+//        
+//        (NVActivityIndicatorType.ballPulse.rawValue ... NVActivityIndicatorType.audioEqualizer.rawValue).forEach {
+//            let x = ($0 - 1) % cols * cellWidth
+//            let y = ($0 - 1) / cols * cellHeight
+//            let frame = CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
+//            let activityIndicatorView = NVActivityIndicatorView(frame: frame,
+//                                                                type: .ballSpinFadeLoader)
+//            let animationTypeLabel = UILabel(frame: frame)
+//            
+//            animationTypeLabel.sizeToFit()
+//            animationTypeLabel.textColor = UIColor.white
+//            animationTypeLabel.frame.origin.x += 5
+//            animationTypeLabel.frame.origin.y += CGFloat(cellHeight) - animationTypeLabel.frame.size.height
+//            
+//            activityIndicatorView.padding = 350
+//            if $0 == NVActivityIndicatorType.orbit.rawValue {
+//                activityIndicatorView.padding = 0
+//            }
+//            self.window?.rootViewController?.view.addSubview(activityIndicatorView)
+//            self.window?.rootViewController?.view.addSubview(animationTypeLabel)
+//            activityIndicatorView.startAnimating()
+//            
+//            let button: UIButton = UIButton(frame: frame)
+//            self.window?.rootViewController?.view.addSubview(button)
+//            
+//        }
+//        
+//        
         
-        self.window?.rootViewController?.view.backgroundColor = UIColor(red: CGFloat(237 / 255.0), green: CGFloat(85 / 255.0), blue: CGFloat(101 / 255.0), alpha: 1)
+   
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityView.center = (self.window?.rootViewController?.view.center)!
+        activityView.startAnimating()
         
-        let cols = 1
-        let rows = 1
-        let cellWidth = Int((self.window?.rootViewController?.view.frame.width)! / CGFloat(cols))
-        let cellHeight = Int((self.window?.rootViewController?.view.frame.height)! / CGFloat(rows))
-        
-        (NVActivityIndicatorType.ballPulse.rawValue ... NVActivityIndicatorType.audioEqualizer.rawValue).forEach {
-            let x = ($0 - 1) % cols * cellWidth
-            let y = ($0 - 1) / cols * cellHeight
-            let frame = CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
-            let activityIndicatorView = NVActivityIndicatorView(frame: frame,
-                                                                type: .ballSpinFadeLoader)
-            let animationTypeLabel = UILabel(frame: frame)
-            
-            animationTypeLabel.sizeToFit()
-            animationTypeLabel.textColor = UIColor.white
-            animationTypeLabel.frame.origin.x += 5
-            animationTypeLabel.frame.origin.y += CGFloat(cellHeight) - animationTypeLabel.frame.size.height
-            
-            activityIndicatorView.padding = 350
-            if $0 == NVActivityIndicatorType.orbit.rawValue {
-                activityIndicatorView.padding = 0
-            }
-            self.window?.rootViewController?.view.addSubview(activityIndicatorView)
-            self.window?.rootViewController?.view.addSubview(animationTypeLabel)
-            activityIndicatorView.startAnimating()
-            
-            let button: UIButton = UIButton(frame: frame)
-            
-            self.window?.rootViewController?.view.addSubview(button)
-            
-        }
-        
-        
-
+        self.window?.rootViewController?.view.addSubview(activityView)
         
         if let error = error {
             print(error.localizedDescription)
@@ -115,13 +118,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
                     self.databaseRef.child("user_profiles").child(user!.uid).child("name").setValue(user?.displayName)
                     self.databaseRef.child("user_profiles").child(user!.uid).child("email").setValue(user?.email)
                     UserDefaults.standard.setValue(user?.displayName, forKey: "user_name")
+                    UserDefaults.standard.setValue(user?.uid, forKey: "user_id")
+                    UserDefaults.standard.setValue(user?.email, forKey: "user_email")
+
 
                 }
                 
+        
+                activityView.stopAnimating()
+
+                
                 let mainStoryboard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
                 UserDefaults.standard.setValue(user?.displayName, forKey: "user_name")
-                GIDSignIn.sharedInstance().signOut()
+                UserDefaults.standard.setValue(user?.uid, forKey: "user_id")
+                UserDefaults.standard.setValue(user?.email, forKey: "user_email")
 
+                //GIDSignIn.sharedInstance().signOut()
                 self.window?.rootViewController?.performSegue(withIdentifier: "HomeViewSegue", sender: nil)
                 
                 
@@ -157,6 +169,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
+//    func buttonTapped(_ sender: UIButton) {
+//        let size = CGSize(width: 30, height: 30)
+//        
+//        
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+//            NVActivityIndicatorPresenter.sharedInstance.setMessage("Authenticating...")
+//        }
+//        
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+//        }
+//    }
+
 }
 

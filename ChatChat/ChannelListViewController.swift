@@ -33,19 +33,12 @@ enum Section: Int {
 class ChannelListViewController: UITableViewController , GIDSignInUIDelegate{
 
 
-  // MARK: Properties
     
-    
-    @IBOutlet weak var lgo: UIBarButtonItem!
   var senderDisplayName: String? = UserDefaults.standard.value(forKey: "user_name") as? String
     var userlocation: String? = UserDefaults.standard.value(forKey: "user_location") as? String
-
-    @IBAction func lgoo(_ sender: Any) {
-        GIDSignIn.sharedInstance().signOut()
-    }
-
     
-  var newChannelTextField: UITextField?
+    
+    var newChannelTextField: UITextField?
     var checkUser="Vansh"
     let a = 2
   
@@ -54,12 +47,25 @@ class ChannelListViewController: UITableViewController , GIDSignInUIDelegate{
 
     var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
 
-   
+    @IBAction func logout(_ sender: Any) {
+        GIDSignIn.sharedInstance().signOut()
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        
+
+    }
+    
+    
+
   // MARK: View Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Welcome"
+    title = userlocation
+
+    UINavigationBar.appearance().barTintColor = UIColor.init(red: 14/255, green: 34/255, blue: 59/255, alpha: 2.0)
+    
+
+
     
     if userlocation=="449 Palo Verde Road, Gainesville, FL"{
         channelRef = FIRDatabase.database().reference().child("channels1")
@@ -90,6 +96,19 @@ class ChannelListViewController: UITableViewController , GIDSignInUIDelegate{
       let channelItem = [
         "name": name
       ]
+        if !(name.isEmpty){
+        let alert = UIAlertController(title: "Success", message: "Discussion thread created", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+            newChannelTextField?.text=""
+        }
+        
+        if name.isEmpty{
+            let alert = UIAlertController(title: "Failed", message: "Title could not be empty, try again.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
       newChannelRef.setValue(channelItem)
     }    
   }
@@ -105,8 +124,12 @@ class ChannelListViewController: UITableViewController , GIDSignInUIDelegate{
       if let name = channelData["name"] as! String!, name.characters.count > 0 {
         self.channels.append(Channel(id: id, name: name))
         self.tableView.reloadData()
+        
       } else {
+        
         print("Error! Could not decode channel data")
+       
+
       }
     })
   }

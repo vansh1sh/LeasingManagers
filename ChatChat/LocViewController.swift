@@ -6,9 +6,11 @@
 //  Copyright © 2017 Razeware LLC. All rights reserved.
 //
 
-import UIKit
 
-class LocViewController: UIViewController {
+import UIKit
+import Firebase
+
+class LocViewController: UIViewController,GIDSignInUIDelegate {
 
     @IBOutlet weak var countriesTextField: UITextField!
     @IBOutlet weak var autocompleteContainerView: UIView!
@@ -16,9 +18,42 @@ class LocViewController: UIViewController {
     
     var autoCompleteViewController: AutoCompleteViewController!
     
+    var uid: String? = UserDefaults.standard.value(forKey: "user_id") as? String
     
+    var senderDisplayName: String? = UserDefaults.standard.value(forKey: "user_name") as? String
+    var email: String? = UserDefaults.standard.value(forKey: "user_email") as? String
+    
+
     let countriesList = countries
     var isFirstLoad: Bool = true
+    
+    private var channelRefHandle: FIRDatabaseHandle?
+    private var channels: [Channel] = []
+    
+    var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("user_profiles")
+
+    @IBOutlet weak var crea: UIButton!
+    @IBAction func crea(_ sender: AnyObject) {
+    
+        if let name = lblSelectedCountryName?.text {
+            let newChannelRef = channelRef.child(uid!)
+            let channelItem = [
+                "name":senderDisplayName,
+                "email":email,
+                "location": lblSelectedCountryName.text
+            ]
+            
+        newChannelRef.setValue(channelItem)
+            
+        }
+        self.performSegue(withIdentifier: "chatView", sender: nil)
+
+        
+        }
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
