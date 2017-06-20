@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		183083FB1ED1C50E005DE8B1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183083FA1ED1C50E005DE8B1 /* CollectionViewCell.swift */; };
-		1830841E1ED312EA005DE8B1 /* black.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1830841D1ED312EA005DE8B1 /* black.mp4 */; };
-		183084241ED313C7005DE8B1 /* sample-logo-black12.png in Resources */ = {isa = PBXBuildFile; fileRef = 183084231ED313C7005DE8B1 /* sample-logo-black12.png */; };
 		183F58461ECF43E7009C0594 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F58451ECF43E7009C0594 /* ViewController.swift */; };
+		187D9C691EF8E86400D83988 /* black.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 187D9C681EF8E86400D83988 /* black.mp4 */; };
+		187D9C6B1EF8E8AF00D83988 /* sample-logo-black12.png in Resources */ = {isa = PBXBuildFile; fileRef = 187D9C6A1EF8E8AF00D83988 /* sample-logo-black12.png */; };
 		1895F2241ED04F930023D1B1 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895F2231ED04F930023D1B1 /* MyCell.swift */; };
 		1895F2261ED0AD0E0023D1B1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1895F2251ED0AD0E0023D1B1 /* CustomCell.xib */; };
 		1895F2281ED0ADFA0023D1B1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895F2271ED0ADFA0023D1B1 /* CustomCell.swift */; };
@@ -43,9 +43,9 @@
 
 /* Begin PBXFileReference section */
 		183083FA1ED1C50E005DE8B1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		1830841D1ED312EA005DE8B1 /* black.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = black.mp4; path = ../../Desktop/black.mp4; sourceTree = "<group>"; };
-		183084231ED313C7005DE8B1 /* sample-logo-black12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sample-logo-black12.png"; path = "../../Desktop/sample-logo-black12.png"; sourceTree = "<group>"; };
 		183F58451ECF43E7009C0594 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		187D9C681EF8E86400D83988 /* black.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = black.mp4; sourceTree = "<group>"; };
+		187D9C6A1EF8E8AF00D83988 /* sample-logo-black12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-logo-black12.png"; sourceTree = "<group>"; };
 		1895F2231ED04F930023D1B1 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		1895F2251ED0AD0E0023D1B1 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		1895F2271ED0ADFA0023D1B1 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 		BB53556D1BEF765800321277 = {
 			isa = PBXGroup;
 			children = (
-				183084231ED313C7005DE8B1 /* sample-logo-black12.png */,
-				1830841D1ED312EA005DE8B1 /* black.mp4 */,
+				187D9C6A1EF8E8AF00D83988 /* sample-logo-black12.png */,
+				187D9C681EF8E86400D83988 /* black.mp4 */,
 				BB5355781BEF765800321277 /* ChatChat */,
 				BB5355771BEF765800321277 /* Products */,
 				97CEDEF6DA0B51A3522B766A /* Frameworks */,
@@ -282,8 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183084241ED313C7005DE8B1 /* sample-logo-black12.png in Resources */,
-				1830841E1ED312EA005DE8B1 /* black.mp4 in Resources */,
+				187D9C6B1EF8E8AF00D83988 /* sample-logo-black12.png in Resources */,
+				187D9C691EF8E86400D83988 /* black.mp4 in Resources */,
 				1895F23D1ED0B4BE0023D1B1 /* Autocomplete.storyboard in Resources */,
 				BB5355841BEF765800321277 /* LaunchScreen.storyboard in Resources */,
 				45B210371D3B740700DB4827 /* GoogleService-Info.plist in Resources */,
@@ -495,7 +495,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = DBTS9L6PYG;
 				INFOPLIST_FILE = ChatChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.telliott.rwchitchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,7 +518,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = DBTS9L6PYG;
 				INFOPLIST_FILE = ChatChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.telliott.rwchitchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
